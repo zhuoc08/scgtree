@@ -35,25 +35,7 @@ void build_and_save_test(std::string dist_file, std::string co_file, std::string
     total_time = t2 - t1;
     std::cout << "build scgtree time: " << total_time << " s." <<std::endl;
 
-
 	tree.save(scg_file.c_str(), false, false);
-
-
-    // spsp query test
-    // int s, d, result;
-    // while(std::cin >> s >> d) {
-	// 	gettimeofday( &tv, NULL );
-	// 	t1 = tv.tv_sec * 1000000 + tv.tv_usec ;
-
-    //     result = tree.spsp_query(s, d);
-
-	// 	gettimeofday( &tv, NULL );
-	// 	t2 = tv.tv_sec * 1000000 + tv.tv_usec ;
-	// 	total_time = t2 - t1;
-    //     std::cout << "scgtree result: " << result << ", time: " << total_time << " us." <<std::endl;
-    // }
-
-
 
 }
 
@@ -63,11 +45,9 @@ void spsp_query_test(std::string dist_file, std::string co_file, std::string scg
 
     Graph graph;
     graph.load(co_file.c_str(), dist_file.c_str());
-    // std::cout << "load graph done!" << std::endl;
 
     SCGTree tree(graph);
     tree.load(scg_file.c_str(), false, false);
-    // std::cout << "load tree done!" << std::endl;
 
 	int s, d;
     std::vector<int> svertexs, dvertexs;
@@ -107,11 +87,9 @@ void knn_query_test(std::string dist_file, std::string co_file, std::string scg_
 
     Graph graph;
     graph.load(co_file.c_str(), dist_file.c_str());
-    // std::cout << "load graph done!" << std::endl;
 
     SCGTree tree(graph);
     tree.load(scg_file.c_str(), false, false);
-    // std::cout << "load tree done!" << std::endl;
 
     int k=10, vq, c, C=0.001*graph.nov;
 	std::vector<int> vqs, objects;
@@ -157,11 +135,9 @@ void range_query_test(std::string dist_file, std::string co_file, std::string sc
 
     Graph graph;
     graph.load(co_file.c_str(), dist_file.c_str());
-    // std::cout << "load graph done!" << std::endl;
 
     SCGTree tree(graph);
     tree.load(scg_file.c_str(), false, false);
-    // std::cout << "load tree done!" << std::endl;
 
     int d=5000, vq, c, C=0.001*graph.nov;
 	std::vector<int> vqs, objects;

@@ -18,5 +18,6 @@ Shortcut Enhanced Graph Hierarchy Tree for Efficient Spatial Queries on Massive 
 - You can quickly construct and save BAY.scg by using BAY.co and BAY.d, and perform SPSP, kNN, and range queries on BAY.scg.
 
 make test
+
 ./test
 
